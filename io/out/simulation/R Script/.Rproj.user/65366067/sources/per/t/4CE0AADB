@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542908107717.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4182810600",
+    "id" : "4CE0AADB",
+    "lastKnownWriteTime" : 1542908152,
+    "last_content_update" : 1542908152213,
+    "path" : "C:/Users/Rafi Pedersen/IdeaProjects/Pneumatics Simulator/io/out/simulation/R Script/PistonSimGrapher.R",
+    "project_path" : "PistonSimGrapher.R",
+    "properties" : {
+        "cursorPosition" : "24,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}
