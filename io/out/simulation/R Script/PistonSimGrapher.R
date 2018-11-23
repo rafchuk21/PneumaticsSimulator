@@ -1,8 +1,8 @@
 library(readr)
 library(ggplot2)
-dataSet <- read_csv("SimpleLinearDualActionPiston550183505472286.txt", col_names = FALSE, skip = 1)
+dataSet <- read_csv("SimpleLinearTranslator583430083507717.txt", col_names = FALSE, skip = 1)
 colnames(dataSet) <- c("Time", "Position", "PressureExt", "PressureRet")
-trimmedData <- dataSet[1:1000,]
+trimmedData <- dataSet
 
 p <- ggplot(trimmedData, aes(x = trimmedData$Time))
 minPosition = min(trimmedData$Position)
