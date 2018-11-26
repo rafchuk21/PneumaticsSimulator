@@ -92,29 +92,55 @@ public abstract class LinearPiston {
         //System.out.println(chamberPressure + ", " + chamberVolume + ", " + inPressure + " -> " + newPressure);
         return newPressure;
     }
-
+    
+    /**
+     * Returns the position of the piston
+     * @return position of the piston [in]
+     */
     public double getPosition() {
         return UnitConverter.metersToInches(position);
     }
-
+    
+    /**
+     * Returns the position of the piston
+     * @param metric whether return value should be in [m] or [in]
+     * @return pressures in the piston [m] or [in]
+     */
     public double getPosition(boolean metric) {
         if (metric)
             return position;
         else
             return getPosition();
     }
-
+    
+    /**
+     * Returns pressures of the piston
+     * @return pressures in the piston [PSI]
+     */
     public double[] getPressures() {
         return new double[] { UnitConverter.npsmToPSI(extChamberPressure), UnitConverter.npsmToPSI(retChamberPressure)};
     }
-
+    
+    /**
+     * Returns pressures of the piston
+     * @param metric whether return value should be in [N/m^2] or [PSI]
+     * @return pressures in the piston [N/m^2] or [PSI]
+     */
     public double[] getPressures(boolean metric) {
         if (metric)
             return new double[] {extChamberPressure, retChamberPressure};
         else
             return getPressures();
     }
-
+    
+    /**
+     * Update the piston
+     * @param dt time interval [s]
+     * @param loadForce force opposing piston extension [lbforce]
+     * @param loadMass mass attached to piston [lbmass]
+     * @param extPortPressure pressure going into extension port [PSI]
+     * @param retPortPressure pressure going into retraction port [PSI]
+     */
     public void update(double dt, double loadForce, double loadMass, double extPortPressure, double retPortPressure) {
         update(dt, loadForce, loadMass, extPortPressure, retPortPressure, false);
     }
@@ -165,11 +191,22 @@ public abstract class LinearPiston {
         else
             return UnitConverter.metersToInches(velocity);
     }
-
+    
+    /**
+     * Updates the position of the piston using piston's velocity value
+     * @param dt time interval [s]
+     * @return new position of piston [in]
+     */
     public double move(double dt) {
         return move(dt, false);
     }
-
+    
+    /**
+     * Updates the position of the piston using piston's velocity value
+     * @param dt time interval [s]
+     * @param metric whether return value should be in [m] or [in]
+     * @return new position of piston [m] or [in]
+     */
     public double move(double dt, boolean metric) {
         position += velocity * dt;
 
