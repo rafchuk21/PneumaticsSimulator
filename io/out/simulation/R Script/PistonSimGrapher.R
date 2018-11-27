@@ -22,3 +22,4 @@ p <- p + scale_y_continuous(sec.axis = sec_axis(~.*(maxPressureExt-minPressureEx
 p <- p + scale_color_manual(values = c("blue", "red", "green"))
 p <- p + labs(y = "Position (in)", x = "Time", color = "Legend")
 p <- p + theme(legend.position = c(0.8,0.3))
+show(p)
